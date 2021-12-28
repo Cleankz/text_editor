@@ -11,7 +11,7 @@ def BastShoe(command):
             safe.result = ''.join(array) 
             safe.result_con.append(safe.result)
         else:
-            del array[len(array)-int(string[1]):len(array)]
+            del array[len(array)-int(string[1]):len(array)-1]
             safe.result = ''.join(array)
             safe.result_con.append(safe.result)       
     elif int(string[0]) == 3:
@@ -28,6 +28,4 @@ def BastShoe(command):
     else:
         ""
     return safe.result
-        
-        
-print(BastShoe("3 0"))
+print(BastShoe("1 kujtythrgrfasg"))
