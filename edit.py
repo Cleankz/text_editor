@@ -28,4 +28,4 @@ def BastShoe(command):
     else:
         ""
     return safe.result
-print(BastShoe("1 kujtythrgrfasg"))
+print(BastShoe("3 0"))
