@@ -1,30 +1,50 @@
-import safe
+result = ""
+result_con = []
+metka = len(result_con) - 1
 def BastShoe(command):
-    string = command.split()
+    global result,result_con,metka
+    string = command.split(" ",1)
     if int(string[0]) == 1:
-        safe.result = safe.result + string[1]
-        safe.result_con.append(safe.result)
+        result = result + string[1]
+        result_con.append(result)
+        metka = len(result_con) - 1
+        print(result)
     elif int(string[0]) == 2:
-        array = list(safe.result)
+        array = list(result)
         if int(string[1]) >= len(array):
             array.clear()
-            safe.result = ''.join(array) 
-            safe.result_con.append(safe.result)
+            result = ''.join(array) 
+            result_con.append(result)
+            metka = len(result_con)
+            print(result)
         else:
             del array[len(array)-int(string[1]):len(array)]
-            safe.result = ''.join(array)
-            safe.result_con.append(safe.result)       
+            result = ''.join(array)
+            result_con.append(result)
+            metka = len(result_con) - 1
+            print(result)       
     elif int(string[0]) == 3:
-        if int(string[1]) <= len(safe.result)-1:
-            safe.result_con.append(safe.result[int(string[1])])
-            return safe.result[int(string[1])]
+        if int(string[1]) <= len(result)-1:
+            result_con.append(result[int(string[1])])
+            print(result[int(string[1])])
         else:
             return ""
-        
     elif int(string[0]) == 4:
-        ""
+        result_con.append(result_con[metka-1])
+        metka = len(result_con) - 1
+        return result_con[metka-1]
     elif int(string[0]) == 5:
         ""
     else:
         ""
-    return safe.result
+print(BastShoe("1 привет"))
+print(BastShoe("1 , Мир"))
+print(BastShoe("1 ++"))
+print(BastShoe("2 2"))
+print(BastShoe("4"))
+print(BastShoe("4"))
+print(BastShoe("1 *"))
+print(BastShoe("4"))
+print(BastShoe("4"))
+print(BastShoe("4"))
+print(BastShoe("3 6"))
