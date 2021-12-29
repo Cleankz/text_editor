@@ -8,12 +8,13 @@ def BastShoe(command):
     global result,result_con,metka,flag
     string = command.split(" ",1)
     if int(string[0]) == 1:
-        result = result + string[1]
-        result_con.append(result)
         metka = len(result_con) - 1
         if flag == True:
+            result_con[len(result_con)-1] = result
             del result_con[0:len(result_con)-2]
             flag = False
+        result = result + string[1]
+        result_con.append(result)
         return result
     elif int(string[0]) == 2:
         array = list(result)
