@@ -69,4 +69,4 @@ def BastShoe(command):
             return result_con[len(result_con)-1]
     
     else:
-         return ""
+         return result
