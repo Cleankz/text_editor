@@ -80,3 +80,20 @@ def BastShoe(command):
     
     else:
          return result
+print(BastShoe("1 Привет"))
+print(BastShoe("5"))
+print(BastShoe("4"))
+print(BastShoe("1 Привет"))
+print(BastShoe("1 , Мир!"))
+print(BastShoe("1 ++"))
+print(BastShoe("4"))
+print(BastShoe("5"))
+print(BastShoe("4"))
+print(BastShoe("5"))
+print(BastShoe("5"))
+print(BastShoe("4"))
+print(BastShoe("4"))
+print(BastShoe("3 4"))
+print(BastShoe("1 рота"))
+print(BastShoe("4"))
+print(BastShoe("5"))
