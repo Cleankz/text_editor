@@ -21,10 +21,10 @@ def BastShoe(command):
             metka = len(result_con) - 1
             flag_1 = False
         return result
-    elif int(string[0]) == 2:
-        if len(result_con) <= 1  and len(result_con[0]) <= 1:
-            return ""
-            
+        
+    if len(result_con) <= 1  and len(result_con[0]) <= 1:
+        return ""
+    elif int(string[0]) == 2:   
         array = list(result)
         result = ''.join(array) 
         result_con.append(result)
@@ -47,8 +47,6 @@ def BastShoe(command):
             return result
         return result
     elif int(string[0]) == 3:
-        if len(result_con) <= 1  and len(result_con[0]) <= 1:
-                return ""
         if int(string[1]) <= len(result)-1:
             flag = False
             flag_1 = True
@@ -73,8 +71,6 @@ def BastShoe(command):
         result = result_con[metka]
         return result_con[metka]
     elif int(string[0]) == 5:
-        if len(result_con) <= 1  and len(result_con[0]) <= 1:
-            return ""
         flag = False
         metka = metka + 1
         if metka >= len(result_con):
