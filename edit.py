@@ -4,9 +4,9 @@ result_con.append(result)
 metka = len(result_con)
 flag = False
 flag_1 = False
-    
+flag_2 = False
 def BastShoe(command):
-    global result,result_con,metka,flag,flag_1
+    global result,result_con,metka,flag,flag_1,flag_2
     string = command.split(" ",1)
     if int(string[0]) == 1:
         result = result + string[1]
@@ -57,6 +57,7 @@ def BastShoe(command):
             return ""
     elif int(string[0]) == 4:
         flag = True
+        flag_2 = True
         if len( result_con) <= 2 :
             result = result_con[0]
             return result_con[0]
@@ -71,29 +72,13 @@ def BastShoe(command):
         result = result_con[metka]
         return result_con[metka]
     elif int(string[0]) == 5:
+        if flag_2 == False:
+            return ""
         flag = False
         metka = metka + 1
         if metka >= len(result_con):
             return result_con[len(result_con)-1]
         else:
             return result_con[metka]
-    
     else:
          return result
-print(BastShoe("1 Привет"))
-print(BastShoe("5"))
-print(BastShoe("4"))
-print(BastShoe("1 Привет"))
-print(BastShoe("1 , Мир!"))
-print(BastShoe("1 ++"))
-print(BastShoe("4"))
-print(BastShoe("5"))
-print(BastShoe("4"))
-print(BastShoe("5"))
-print(BastShoe("5"))
-print(BastShoe("4"))
-print(BastShoe("4"))
-print(BastShoe("3 4"))
-print(BastShoe("1 рота"))
-print(BastShoe("4"))
-print(BastShoe("5"))
