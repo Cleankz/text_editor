@@ -2,9 +2,9 @@ result = ""
 result_con = []
 result_con.append(result)
 metka = len(result_con) - 1
-flag = False
-flag_1 = False
-flag_2 = False
+done = False # flag - done
+done_1 = False # flag_1 - done_1
+done_2 = False # flag_2 - done_2
 def BastShoe(command):
     global result,result_con,metka,flag,flag_1,flag_2
     string = command.split(" ",1)
@@ -15,15 +15,15 @@ def BastShoe(command):
             result_con.append(result)
         result += string[1]
         result_con.append(result)
-        if flag == True:
+        if done == True:
             result_con[len(result_con)-1] = result
             del result_con[0:len(result_con)-2]
-            flag = False
-        if flag_1 == True:
-            flag_1 = False
+            done = False
+        if done_1 == True:
+            done_1 = False
         else:
             metka = len(result_con) - 1
-            flag_1 = False
+            done_1 = False
         metka = len(result_con) - 1
         return result_con[metka]
     if len(result_con) <= 1  and len(result_con[0]) <= 1:
@@ -35,15 +35,15 @@ def BastShoe(command):
             array.clear()
             result = ''
             result_con.append(result)
-            if flag == True:
+            if done == True:
                 del result_con[0:len(result_con)-2]
-                flag = False
+                done = False
         else:
             del array[len(array)-int(string[1]):len(array)]
-            if flag == True:
+            if done == True:
                 result_con[len(result_con)-1] = result
                 del result_con[0:len(result_con)-2]
-                flag = False
+                done = False
             result = ''.join(array)
             result_con.append(result)
             metka = len(result_con) - 1
@@ -51,16 +51,16 @@ def BastShoe(command):
         return result
     elif int(string[0]) == 3:
         if int(string[1]) <= len(result)-1:
-            flag = False
-            flag_1 = True
+            done = False
+            done_1 = True
             return result[int(string[1])]
         else:
-            flag = False
-            flag_1 = True
+            done = False
+            done_1 = True
             return ""
     elif int(string[0]) == 4:
-        flag = True
-        flag_2 = True
+        done = True
+        done_2 = True
         if len( result_con) <= 2 :
             result = result_con[0]
             return result_con[0]
@@ -74,9 +74,9 @@ def BastShoe(command):
         result = result_con[metka]
         return result_con[metka]
     elif int(string[0]) == 5:
-        if flag_2 == False:
+        if done_2 == False:
             return result
-        flag = False
+        done = False
         metka = metka + 1
         if metka >= len(result_con):
           result = result_con[len(result_con)-1]
